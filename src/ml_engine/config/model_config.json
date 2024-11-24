@@ -1,0 +1,38 @@
+{
+    "model_name": "adaptive_jit_optimizer",
+    "version": "0.1.0",
+    "input_dim": 12,
+    "num_optimization_choices": 5,
+    "training": {
+        "batch_size": 32,
+        "epochs": 100,
+        "learning_rate": 0.001,
+        "validation_split": 0.2,
+        "early_stopping_patience": 5
+    },
+    "feature_config": {
+        "static_features": [
+            "basic_block_count",
+            "instruction_count",
+            "loop_count",
+            "branch_count",
+            "memory_ops",
+            "float_ops",
+            "integer_ops",
+            "function_calls"
+        ],
+        "runtime_features": [
+            "execution_time",
+            "memory_usage",
+            "cache_misses",
+            "branch_mispredictions"
+        ]
+    },
+    "optimization_levels": {
+        "0": "No optimization",
+        "1": "Basic optimizations",
+        "2": "Moderate optimizations with inlining",
+        "3": "Aggressive optimizations",
+        "4": "Maximum optimizations"
+    }
+}
